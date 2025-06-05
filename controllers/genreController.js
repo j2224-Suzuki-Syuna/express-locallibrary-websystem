@@ -8,7 +8,7 @@ const asyncHandler = require("express-async-handler");
 exports.genre_list = asyncHandler(async (req, res, next) => {
   const allGenres = await Genre.find().sort({ name: 1 }).exec();
   res.render("genre_list", {
-    title: "Genre List",
+    title: "ジャンルリスト",
     list_genres: allGenres,
   });
 });
@@ -36,7 +36,7 @@ exports.genre_detail = asyncHandler(async (req, res, next) => {
 
 // Display Genre create form on GET.
 exports.genre_create_get = (req, res, next) => {
-  res.render("genre_form", { title: "Create Genre" });
+  res.render("genre_form", { title: "新しいジャンルを作る" });
 };
 
 // Handle Genre create on POST.
